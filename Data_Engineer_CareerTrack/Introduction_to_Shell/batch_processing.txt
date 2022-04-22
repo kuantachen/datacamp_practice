@@ -1,0 +1,17 @@
+# Shell Scipting
+
+1. $@ (dollar sign immediately followed by at-sign) to mean 
+"all of the command-line parameters given to the script".
+
+2. How can I process a single argument?
+As well as $@, the shell lets you use $1, $2, and so on to refer to specific command-line parameters. 
+You can use this to write commands that feel simpler or more natural than the shell's.
+
+3. How can I write loops in a shell script?
+# Print the first and last data records of each file.
+for filename in $@
+do
+    head -n 2 $filename | tail -n 1
+    tail -n 1 $filename
+done
+
